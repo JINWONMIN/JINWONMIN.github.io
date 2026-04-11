@@ -26,7 +26,7 @@ const urls = [];
 
 // Root redirect
 urls.push(
-  `<url><loc>${BASE_URL}</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`
+  `<url><loc>${BASE_URL}/</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`
 );
 
 for (const locale of locales) {
@@ -36,30 +36,30 @@ for (const locale of locales) {
 
   // Home
   urls.push(
-    `<url><loc>${BASE_URL}/${locale}</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en"/></url>`
+    `<url><loc>${BASE_URL}/${locale}/</loc><lastmod>${today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/"/></url>`
   );
 
   // About
   urls.push(
-    `<url><loc>${BASE_URL}/${locale}/about</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/about"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/about"/></url>`
+    `<url><loc>${BASE_URL}/${locale}/about/</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/about/"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/about/"/></url>`
   );
 
   // Tags index
   urls.push(
-    `<url><loc>${BASE_URL}/${locale}/tags</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/tags"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/tags"/></url>`
+    `<url><loc>${BASE_URL}/${locale}/tags/</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/tags/"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/tags/"/></url>`
   );
 
   // Posts
   posts.forEach((p) => {
     urls.push(
-      `<url><loc>${BASE_URL}/${locale}/posts/${p.slug}</loc><lastmod>${p.date}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/posts/${p.slug}"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/posts/${p.slug}"/></url>`
+      `<url><loc>${BASE_URL}/${locale}/posts/${p.slug}/</loc><lastmod>${p.date}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/posts/${p.slug}/"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/posts/${p.slug}/"/></url>`
     );
   });
 
   // Tag pages
   Array.from(tags).forEach((tag) => {
     urls.push(
-      `<url><loc>${BASE_URL}/${locale}/tags/${encodeURIComponent(tag)}</loc><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/tags/${encodeURIComponent(tag)}"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/tags/${encodeURIComponent(tag)}"/></url>`
+      `<url><loc>${BASE_URL}/${locale}/tags/${encodeURIComponent(tag)}/</loc><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ko" href="${BASE_URL}/ko/tags/${encodeURIComponent(tag)}/"/><xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/tags/${encodeURIComponent(tag)}/"/></url>`
     );
   });
 }

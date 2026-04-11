@@ -3,14 +3,20 @@
     "보안": "Security",
     "블로그 개발기": "Blog Dev Story",
     "서버리스": "Serverless",
+    "트러블슈팅": "Troubleshooting",
     "모니터링": "Monitoring",
-    "옵저버빌리티": "Observability"
+    "옵저버빌리티": "Observability",
+    "검색": "Search",
+    "다크모드": "Dark Mode"
   },
   "enToKo": {
     "Security": "보안",
     "Blog Dev Story": "블로그 개발기",
     "Serverless": "서버리스",
+    "Troubleshooting": "트러블슈팅",
     "Monitoring": "모니터링",
-    "Observability": "옵저버빌리티"
+    "Observability": "옵저버빌리티",
+    "Search": "검색",
+    "Dark Mode": "다크모드"
   }
 }

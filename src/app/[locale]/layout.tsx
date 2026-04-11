@@ -25,6 +25,7 @@ export async function generateMetadata({
       locale: dict.site.locale,
     },
     alternates: {
+      canonical: `https://jinwonmin.github.io/${locale}/`,
       types: {
         "application/rss+xml": `/${locale}/rss.xml`,
       },

@@ -1,14 +1,33 @@
 import type { Metadata } from "next";
 import AboutProfile from "@/components/AboutProfile";
+import { locales, type Locale } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "About minsnote",
-  openGraph: {
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
     title: "About",
-    description: "About minsnote",
-  },
-};
+    description: "minsnote 블로그 소개 — 웹 개발과 인프라 모니터링에 대한 개발 노트",
+    alternates: {
+      canonical: `https://jinwonmin.github.io/${locale}/about/`,
+      languages: {
+        ko: "/ko/about/",
+        en: "/en/about/",
+      },
+    },
+    openGraph: {
+      title: "About",
+      description: "minsnote 블로그 소개 — 웹 개발과 인프라 모니터링에 대한 개발 노트",
+    },
+  };
+}
 
 export default function AboutPage() {
   return (

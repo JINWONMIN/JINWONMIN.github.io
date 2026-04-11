@@ -7,9 +7,23 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: "Tags",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Tags",
+    alternates: {
+      canonical: `https://jinwonmin.github.io/${locale}/tags/`,
+      languages: {
+        ko: "/ko/tags/",
+        en: "/en/tags/",
+      },
+    },
+  };
+}
 
 export default async function TagsPage({ params }: Props) {
   const { locale } = await params;
