@@ -34,15 +34,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = await getPostBySlug(slug, locale as Locale);
-  const url = `https://jinwonmin.github.io/${locale}/posts/${slug}`;
+  const url = `https://jinwonmin.github.io/${locale}/posts/${slug}/`;
   return {
     title: post.title,
     description: post.description,
     alternates: {
       canonical: url,
       languages: {
-        ko: `/ko/posts/${slug}`,
-        en: `/en/posts/${slug}`,
+        ko: `/ko/posts/${slug}/`,
+        en: `/en/posts/${slug}/`,
       },
     },
     openGraph: {
@@ -80,10 +80,10 @@ export default async function PostPage({ params }: Props) {
       "@type": "Person",
       name: "minsnote",
     },
-    url: `https://jinwonmin.github.io/${locale}/posts/${slug}`,
+    url: `https://jinwonmin.github.io/${locale}/posts/${slug}/`,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://jinwonmin.github.io/${locale}/posts/${slug}`,
+      "@id": `https://jinwonmin.github.io/${locale}/posts/${slug}/`,
     },
     keywords: post.tags.join(", "),
   };

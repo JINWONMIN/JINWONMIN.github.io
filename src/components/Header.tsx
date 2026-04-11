@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { type Locale, translateTerm } from "@/lib/i18n";
 
@@ -11,7 +11,6 @@ interface HeaderProps {
 
 export default function Header({ locale }: HeaderProps) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const navLinks = [
     { href: `/${locale}/tags`, label: "Tags" },

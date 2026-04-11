@@ -26,8 +26,18 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { tag } = await params;
-  return { title: `Tag: ${decodeURIComponent(tag)}` };
+  const { locale, tag } = await params;
+  const decodedTag = decodeURIComponent(tag);
+  return {
+    title: `Tag: ${decodedTag}`,
+    alternates: {
+      canonical: `https://jinwonmin.github.io/${locale}/tags/${encodeURIComponent(tag)}/`,
+      languages: {
+        ko: `/ko/tags/${encodeURIComponent(tag)}/`,
+        en: `/en/tags/${encodeURIComponent(tag)}/`,
+      },
+    },
+  };
 }
 
 export default async function TagPage({ params }: Props) {

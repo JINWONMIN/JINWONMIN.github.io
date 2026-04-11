@@ -1,6 +1,6 @@
 {
   "site": {
-    "description": "Dev notes and random musings ~~",
+    "description": "Dev notes on web development, monitoring, and infrastructure — Next.js, Prometheus, Cloudflare Workers, and more",
     "locale": "en_US"
   },
   "nav": {

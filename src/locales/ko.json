@@ -1,6 +1,6 @@
 {
   "site": {
-    "description": "이모저모 주저리주저리 ~~",
+    "description": "웹 개발, 모니터링, 인프라에 대한 개발 노트 — Next.js, Prometheus, Cloudflare Workers 등",
     "locale": "ko_KR"
   },
   "nav": {
